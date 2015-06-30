@@ -1,0 +1,251 @@
+<div class="content">
+    <h3>基本设置</h3>
+    <form action="http://www.yl-blog.com/myadmin/index.php/setting/edit" method="post">
+      <table class="table_style"  id="hacker" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="100">站点名称：</td>
+            <td width="350"><input id="sitename" class="regular-text" type='text' value="雨林技术总结" name="sitename" /></td>
+            <td><span class="table_style_tip"><span>{</span>sys:sitename<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>网站地址：</td>
+            <td><input class="regular-text" type='text' value="http://www.yl-blog.com/" name="siteurl" id="siteurl" /></td>
+            <td><span>{</span>sys:siteurl<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>网站关键词：</td>
+            <td><input class="regular-text" type='text' value="雨林博客 IT新闻 编程技术 Java 面试题 数据库 " name="keywords" id="keywords" /></td>
+            <td><span>{</span>sys:keywords<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>网站描述：</td>
+            <td><textarea name="description" id="description" cols="0" rows="5" class="regular-textarea" style="width:310px !important">雨林技术总结 -专注于计算机相关问题解决。</textarea></td>
+            <td><span>{</span>sys:description<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>站长邮箱：</td>
+            <td><input class="regular-text" type='text' value="wuweiit@gmail.com" name="masteremail" id="masteremail" /></td>
+            <td><span>{</span>sys:masteremail<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>版权信息：</td>
+            <td><input class="regular-text" type='text' value="雨林技术总结" name="copyright" id="copyright" /></td>
+            <td><span>{</span>sys:copyright<span>}</span></span></td>
+          </tr>
+          <tr>
+            <td>ICP备案号：</td>
+            <td><input class="regular-text" type='text' value="" name="icp" id="icp" /></td>
+            <td><span>{</span>sys:icp<span>}</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>全局设置</h3>
+      <table class="table_style"  id="hacker" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="100">调试模式：</td>
+            <td width="350">              <input type="radio"  name="DEBUG" value="true" />
+              开启
+              <input type="radio"  name="DEBUG" id="DEBUG" value="false"  checked="checked"  />
+              关闭
+              </td>
+            <td>开启调试模式将会显示详细错误信息</td>
+          </tr>
+          <tr>
+            <td>伪静态模式：</td>
+            <td>              <input type="radio" name="URL_REWRITE_ON" value="true" />
+              开启
+              <input type="radio" name="URL_REWRITE_ON" id="URL_REWRITE_ON" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td>开启伪静态请先设置相应的伪静态规则</td>
+          </tr>
+          <tr>
+            <td>静态缓存：</td>
+            <td>              <input type="radio" name="HTML_CACHE_ON" value="true" />
+              开启
+              <input type="radio" name="HTML_CACHE_ON" id="HTML_CACHE_ON" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td>开启静态缓存后更改模板与设置请先清除缓存</td>
+          </tr>
+          <tr>
+            <td>获取IP记录：</td>
+            <td><select name="IP_STATUS" id="IP_STATUS">
+                <option value="0"  selected="selected" >不获取</option>
+                <option value="1"  >远程获取</option>
+                <option value="2"  >本地获取</option>
+              </select></td>
+            <td>开启本地获取需要放置IP库</td>
+          </tr>
+          <tr>
+            <td>目录优化：</td>
+            <td><select name="URL_HTML_MODEL" id="URL_HTML_MODEL">
+                <option value="1"  selected="selected" >短目录地址</option>
+                <option value="2"  >多级目录地址</option>
+              </select></td>
+            <td>
+            将改变所有通过标签调用的超链接地址<br />
+短地址:http://127.0.0.1/list/1.html<br />
+多级目录地址:http://127.0.0.1/channel/list/1.html
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>模板设置</h3>
+      <table class="table_style"  id="hacker" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="100">首页模板：</td>
+            <td width="350"><input class="regular-text" type='text' value="index" name="TPL_TEMPLATE_INDEX" id="TPL_TEMPLATE_INDEX" /></td>
+            <td><span class="table_style_tip">请输入首页模板文件名不需要加后缀</td>
+          </tr>
+          <tr>
+            <td width="100">模板目录：</td>
+            <td width="350"><input class="regular-text" type='text' value="template/ylblog/" name="TPL_TEMPLATE_PATH" id="TPL_TEMPLATE_PATH" /></td>
+            <td><span class="table_style_tip"><span>{</span>sys:TPL_TEMPLATE_PATH<span>}</span></span></td>
+          </tr>
+          <!--
+      <tr>
+        <td>模板后缀：</td>
+        <td><input class="regular-text" type='text' value=".html" name="TPL_TEMPLATE_SUFFIX" /></td>
+        <td><span>{</span>sys:TPL_TEMPLATE_SUFFIX<span>}</span></span></td>
+      </tr>
+      -->
+          <tr>
+            <td>模板缓存：</td>
+            <td>              <input type="radio" name="TPL_CACHE_ON" id="TPL_CACHE_ON" value="true" checked="checked" />
+              开启
+              <input type="radio" name="TPL_CACHE_ON" value="false" />
+              关闭
+              </td>
+            <td>更换修改模板请先清除缓存</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>数据库设置</h3>
+      <table class="table_style"  id="hacker" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="100">数据库类型：</td>
+            <td width="350"><input name="DB_TYPE" id="DB_TYPE" type='text' disabled="disabled" class="regular-text" value="mysql" readonly="readonly" /></td>
+            <td>暂时只支持mysql</td>
+          </tr>
+          <tr>
+            <td>数据库主机：</td>
+            <td><input class="regular-text" type='text' value="localhost" name="DB_HOST" id="DB_HOST" /></td>
+            <td>主机名或IP</td>
+          </tr>
+          <tr>
+            <td>数据库用户名：</td>
+            <td><input class="regular-text" type='text' value="meinv3389" name="DB_USER" id="DB_USER" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>数据库密码：</td>
+            <td><input class="regular-text" type='text' value="EDRYR5HDANFY" name="DB_PWD" id="DB_PWD" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>数据库端口：</td>
+            <td><input class="regular-text" type='text' value="3306" name="DB_PORT" id="DB_PORT" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>数据库名：</td>
+            <td><input class="regular-text" type='text' value="meinv3389" name="DB_NAME" id="DB_NAME" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>永久链接：</td>
+            <td>              <input type="radio" name="DB_PCONNECT" value="true" />
+              开启
+              <input type="radio" name="DB_PCONNECT" id="DB_PCONNECT" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>数据库缓存：</td>
+            <td>              <input type="radio" name="DB_CACHE_ON" value="true" />
+              开启
+              <input type="radio" name="DB_CACHE_ON" id="DB_CACHE_ON" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td>开启后修改添加内容请更新缓存</td>
+          </tr>
+          <tr>
+            <td>缓存时间：</td>
+            <td><input class="regular-text" type='text' value="60" name="DB_CACHE_TIME" id="DB_CACHE_TIME" /></td>
+            <td>0为不缓存,-1为永久缓存</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>上传设置</h3>
+      <table class="table_style"  id="hacker" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="100">上传大小：</td>
+            <td width="350"><input class="regular-text" type='text' value="2" name="accessory_size" id="accessory_size" /></td>
+            <td>单位:M</td>
+          </tr>
+          <tr>
+            <td>批量上传数：</td>
+            <td><input class="regular-text" type='text' value="30" name="accessory_num" id="accessory_num" /></td>
+            <td>/td>
+          </tr>
+          <tr>
+            <td>上传格式：</td>
+            <td><input name="accessory_type" type='text' class="regular-text" value="jpg,bmp,gif,png,flv,mp4,mp3,wma,mp4,7z,zip,rar,ppt,txt,pdf,xls,doc,swf,wmv,avi,rmvb,rm,torrent,jar" id="accessory_type" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>生成缩略图：</td>
+            <td>              <input type="radio" name="thumbnail_switch" value="true" />
+              开启
+              <input type="radio" name="thumbnail_switch" id="thumbnail_switch" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>缩图尺寸：</td>
+            <td>最大宽度
+              <input style="width:50px;" class="regular-text" type='text' value="200" name="thumbnail_maxwidth" id="thumbnail_maxwidth" />
+              &nbsp;&nbsp;最大高
+              <input style="width:50px;" class="regular-text" type='text' value="140" name="thumbnail_maxhight" id="thumbnail_maxhight" /></td>
+            <td>单位:px</td>
+          </tr>
+          <tr>
+            <td>是否加水印：</td>
+            <td>              <input type="radio" name="watermark_switch" value="true" />
+              开启
+              <input type="radio"   id="watermark_switchh" name="watermark_switch" value="false"  checked="checked" />
+              关闭
+              </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>水印位置：</td>
+            <td><select name="watermark_place" id="watermark_place">
+                <option value="0" >随机</option>
+                <option value="1"  >左上</option>
+                <option value="2"  >中上</option>
+                <option value="3" >右上</option>
+                <option value="4" >左中</option>
+                <option value="5"  selected="selected" >正中</option>
+                <option value="6" >右中</option>
+                <option value="7" >左下</option>
+                <option value="8" >中下</option>
+                <option value="9" >右下</option>
+              </select></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>水印图片：</td>
+            <td><input class="regular-text" type='text' value="logo.png" name="img_watermark_logo" id="img_watermark_logo" /></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>

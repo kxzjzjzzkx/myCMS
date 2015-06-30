@@ -1,0 +1,73 @@
+<div class="content">
+	<div class="yl_bigbox">
+		<div class="yl_title_bar">文件管理器</div>
+		<div class="yl_address_bar">
+			地址：<input id="yl_file_path" value="/upload" style="width: 500px; height: 23px;"/><button onclick="gotoPathIntoFolder();">Go</button>
+		</div>
+		<div class="yl_bigbox_content">
+			<div id="file_list">
+		 		<div class="yl_file_item" ondblclick="">
+		 			<div class="yl_file_item_border">
+		 				<div class="yl_file_item_icon"></div>
+			 			<div class="yl_file_item_name">我爱你</div>
+			 			<div class="yl_file_item_time">2012/10/9 19:51</div>
+			 			<div class="yl_file_item_type">java</div>
+			 			<div class="yl_file_item_size">1 KB</div>
+			 			<div class="cb"></div>
+		 			</div>
+		 		</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+var viewType = 2;
+//向服务器请求文件列表
+var actionurl = "file/list?fp=";
+showList(actionurl+"\\upload");
+
+
+function gotoPath(obj){
+	var yltype = $(obj).attr("type");
+	var action = $(obj).attr("action");
+	if(yltype == "folder"){//文件夹
+		showList(action);
+	}else{
+		alert("不是文件夹不能打开！");
+	}
+	
+}
+
+
+//显示列表
+function showList(urlx){
+	var address = urlx.split("fp=")[1];
+	$("#yl_file_path").val(address);
+	$.getJSON(urlx,null,function(data){
+		$("#file_list").empty();//清空显示
+		if(viewType == 1){//矩形显示
+			$.each(data,function(index,db){
+				
+				var html = "<div class=\"yl_filebox\" type=\""+db.type+"\" action=\""+actionurl+db.path+"\" ondblclick=\"gotoPath(this);\">";
+				html +="<div class=\"yl_filebox_icon\" style=\" \"><img style=\"width:80px; height:80px;\" src=\"data:image/bmp;base64,"+db.icon+"\"/></div>";
+				html +="<div class=\"yl_filebox_name\">"+db.name+"</div>";
+				html +="</div>";
+				$("#file_list").append(html);
+			});			
+		}else if(viewType == 2){//列表显示
+			$.each(data,function(index,db){
+				var Item = new YLCMS.FileViewItem(actionurl,db);
+				$("#file_list").append(Item.parser());
+			});
+		}
+	});
+}
+
+function gotoPathIntoFolder(){
+	var pixurl = $("#yl_file_path").val();
+	showList(actionurl+pixurl)
+}
+
+</script>

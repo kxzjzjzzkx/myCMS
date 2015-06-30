@@ -1,0 +1,88 @@
+<#import "/spring.ftl" as spring />
+<div class="content">
+	<h2>添加栏目</h2>
+	<hr class="hrs"/>
+</div>
+<div class="content">
+	<form id="myForm" action="channel/save.do" method="post">
+ 
+
+	<table class="table_for_add">
+		<tbody>
+			<tr class="rowBgColor">
+				<th width="140">所属栏目：</th>
+				<td>
+				<select class="select_for_add"  name="pid">
+					 <option value="0"> -------- 顶级栏目 -------- </option>
+					<#include "/common/channelSelect.html" /> 
+		  			<@channelTree id = 0 node = -1/> 
+				</select>
+				</td>
+				<td width="30"><span id="name_status"></span></td>
+			</tr>
+			<tr>
+				<th>栏目名称： </th>
+				<td><input class="input_for_add" id="name" name="name" type="text" /></td>
+				<td><span id="scope_status"></span></td>
+			</tr>
+			<tr class="rowBgColor">
+				<th>栏目关键字：</th>
+				<td><input class="input_for_add" name="keywords" type="text" /></td>
+				<td><span id="trade_status"></span></td>
+			</tr>
+			<tr>
+				<th>栏目描述：</th>
+				<td><textarea class="textarea_for_add" name="description"></textarea></td>
+				<td><span id="type_status"></span></td>
+			</tr>
+			<tr class="rowBgColor">
+				<th>栏目图标：</th>
+				<td><input class="input_for_add" name="icon" type="text" /></td>
+				<td><span id="name_status"></span></td>
+			</tr>
+			<tr>
+				<th>栏目模板：</th>
+				<td><input class="input_for_add" name="template" type="text" /></td>
+				<td><span id="name_status"></span></td>
+			</tr>
+		 	<tr class="rowBgColor">
+				<th>栏目地址： </th>
+				<td><input class="input_for_add" style="width:100px;" name="url" value="defalut" type="text" />
+				&nbsp; &nbsp; 
+				内容模型：
+				<select class="select_for_add" style="width:90px;" name="module">
+					<#list modules as mod>
+					<option value="${mod.type!}">${mod.name!}</option>
+					</#list>
+				</select>
+				</td>
+				<td><span id="scope_status"></span></td>
+			</tr> 
+		    <tr>
+				<th>栏目属性：</th>
+				<td>
+				<select class="select_for_add" style="width: 60px;" name="hide">
+					<option value="1">显示</option>
+					<option value="0">隐藏</option>
+				</select>
+				&nbsp; &nbsp;
+				 排序：<input class="input_for_add" name="sort" style="width:50px;" value="0" type="text" />
+				&nbsp; &nbsp;
+				 条数：<input class="input_for_add" name="rows" style="width:50px;" value="10" type="text" />
+				</td>
+				<td><span id="name_status"></span></td>
+			</tr>		
+
+		</tbody>
+	</table>
+	</form>
+	<div class="center textcenter foot">
+		<button onclick="submitActionForm(this);" return="channel/list.do">提交 </button>
+		<button onclick="resetActionForm();">重置 </button>
+	</div>
+</div>
+
+<script type="text/javascript">
+ 
+
+</script>

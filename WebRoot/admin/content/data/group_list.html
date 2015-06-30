@@ -1,0 +1,35 @@
+<div class="content">
+
+<table class="table_list">
+    <thead>
+      <tr>
+        <th colspan="8">用户组管理 
+        <span class="fr white">[<a href="#" action="group/add" onclick="YLCMS.dialog(this,'添加用户组',450,200);">添加</a>]</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <th width="30" class="quanxuan" onclick="allCheck();">全选</th>
+        <th>用户组名称</th>
+        <th>成员数(个)</th>
+        <th>描述信息</th>
+        <th width="30">操作</th>
+      </tr>
+	  <#list dataPage.getList() as x>
+		<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+	      	<td class="checkbox"><input type="checkbox" value="${x.id}" /></td>
+	        <td>${x.name}</td>
+	        <td>${x.count}</td>
+	        <td>${x.description}</td> 
+	        <td>
+	        <a href="#" action="group/edit/${x.id}" onclick="YLCMS.dialog(this,'修改组信息: ${x.name}',450,320);">修改</a>
+		    <a href="#" style="display: none;" action="group/delete/${x.id}" return="user" onclick="deleteById(this);">删除</a>
+	        </td>
+	    </tr>
+	  </#list>
+    </tbody>
+  </table>
+  <#include "/common/_page.html" />
+  <@paginate currentPage=dataPage.pageNumber totalPage=dataPage.totalPage actionUrl="group/" />
+</div>

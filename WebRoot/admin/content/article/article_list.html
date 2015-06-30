@@ -1,0 +1,35 @@
+<div class="content">
+
+<table class="table_list">
+    <thead>
+      <tr>
+        <th colspan="8">文章分类管理 
+        <span class="fr white">[<a href="#" action="class/add" onclick="YLCMS.dialog(this,'添加分类',450,200);">添加</a>]</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <th width="30" class="quanxuan" onclick="allCheck();">全选</th>
+        <th>名称</th>
+        <th>文章数目(篇)</th>
+        <th>描述信息</th>
+        <th width="30">操作</th>
+      </tr>
+	  <#list dataPage.getList() as x>
+		<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+	      	<td class="checkbox"><input type="checkbox" value="${x.id}" /></td>
+	        <td>${x.title}</td>
+	        <td></td>
+	        <td>${x.description}</td> 
+	        <td>
+	        <a href="#" action="article/edit/${x.id}" onclick="YLCMS.dialog(this,'修改文章分类: ${x.title}',450,320);">修改</a>
+		    <a href="#" style="display: none;" action="article/delete/${x.id}" return="article" onclick="deleteById(this);">删除</a>
+	        </td>
+	    </tr>
+	  </#list>
+    </tbody>
+  </table>
+  <#include "/common/_page.html" />
+  <@paginate currentPage=dataPage.pageNumber totalPage=dataPage.totalPage actionUrl="article/" />
+</div>

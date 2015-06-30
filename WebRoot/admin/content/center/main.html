@@ -1,0 +1,69 @@
+<div class="content">
+
+<table class="table_list">
+    <thead>
+      <tr>
+        <th colspan="8">功能信息  </th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr> 
+        <th width="30" id="quanxuan" class="quanxuan" onclick="allCheck();">全选</th>
+        <th>功能名称</th>
+        <th>URL地址</th>
+        <th width="30">排序</th>
+        <th>描述信息</th>
+        <th width="30">操作</th>
+      </tr>
+      
+      <c:forEach var="action1" items="${requestScope.actions}">
+	      	<c:if test="${action1.parentid == 0}">
+	      	<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+	      	<td class="checkbox"><input type="checkbox" value="${action1.id }" /></td>
+	        <td><b>${action1.name}</b></td>
+	        <td>${action1.action}</td>
+	        <td>${action1.order}</td>
+	        <td>${action1.description}</td>  
+	        <td><a href="#" onclick="refreshContent('useraction_findForUpdate.action?useraction.id=${action1.id}','修改功能')"><b>修改</b></a></td>
+	      	</tr>
+	      	<c:forEach var="action2" items="${requestScope.actions}">
+	      		<c:if test="${action2.parentid == action1.id}">
+		      	<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+		      	<td class="checkbox"><input type="checkbox" value="${action2.id }" /></td>
+		        <td><b> &nbsp; &nbsp; ├ ${action2.name}</b></td>
+		        <td>${action2.action}</td>
+		        <td>${action2.order}</td>
+		        <td>${action2.description}</td>  
+		        <td><a href="#" onclick="refreshContent('useraction_findForUpdate.action?useraction.id=${action2.id}','修改功能')"><b>修改</b></a></td>
+		      	</tr>
+		      	<c:forEach var="action3" items="${requestScope.actions}">
+		      		<c:if test="${action3.parentid == action2.id}">
+			      	<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+			      	<td class="checkbox"><input type="checkbox" value="${action3.id }" /></td>
+			        <td><b> &nbsp; &nbsp; &nbsp; &nbsp; ├ ${action3.name}</b></td>
+			        <td>${action3.action}</td>
+			        <td>${action3.order}</td>
+			        <td>${action3.description}</td>  
+			        <td><a href="#" onclick="refreshContent('useraction_findForUpdate.action?useraction.id=${action3.id}','修改功能')"><b>修改</b></a></td>
+			      	</tr>
+			      	</c:if>
+		      	</c:forEach>
+	      		</c:if>
+	      	</c:forEach>
+	      	</c:if>
+ 		</c:forEach>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+</div>

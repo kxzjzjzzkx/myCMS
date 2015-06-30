@@ -1,0 +1,22 @@
+<form id="myForm" action="group/update" method="post">
+	<input name="group.id" type="hidden" value="${group.id}" />
+	<input name="group.count" type="hidden" value="${group.count}" />
+	<table class="table_add">
+		<tbody>
+			<tr>
+				<th width="30%">组 名 称：</th>
+				<td><input name="group.name" type="text" value="${group.name}" /></td>
+				<td width="30"><span id="name_status"></span></td>
+			</tr>
+			<tr>
+				<th>描述信息：</th>
+				<td><textarea name="group.description" class="textarea">${group.description}</textarea></td>
+				<td><span id="address_status"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<div class="center textcenter">
+	<button onclick="submitActionForm(this);" return="group">提交 </button>
+	<button onclick="resetActionForm();">重置 </button>
+</div>

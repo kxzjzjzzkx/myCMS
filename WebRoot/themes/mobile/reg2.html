@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>注册 广汉社区</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.2.0.css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <h1>注册新用户</h1>
+  </div>
+  <div data-role="content">
+    <form action="" method="post">
+    <ul data-role="listview">
+        <li data-role="fieldcontain">
+        	<label for="name">姓名:</label>
+	        <input type="text" name="name" id="name" value=""  />
+        </li>
+      	<li data-role="fieldcontain">
+        	<label for="sex">性别:</label>
+            <select name="sex" id="sex" data-role="slider" data-mini="true">
+                <option value="off">男</option>
+                <option value="on">女</option>
+            </select> 
+        </li>
+        <li class="ui-body ui-body-b">
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><button data-theme="d">返 回</button></div>
+                <div class="ui-block-b"><button type="submit" data-theme="d">下一步</button></div>
+            </fieldset>
+        </li>
+    </ul>
+	</form>
+
+</div>
+</body>
+</html>

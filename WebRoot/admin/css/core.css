@@ -1,0 +1,53 @@
+@charset "utf-8"; 
+*{ margin:0; padding:0;}
+a{text-decoration:none;}
+body{ font-family: "微软雅黑", Courier, monospace; font-size:12px;}
+
+/* 绝对定位 */
+.pa{position:absolute;}
+/* 相对定位 */
+.pr{position:relative;}
+/* 左浮动 */
+.fl{float:left;}
+/* 右浮动 */
+.fr{float:right;}
+/* 隐藏 */
+.hide{display:none;}
+/* 文字居中*/
+.tac{text-align:center !important;}
+
+/* 输入框字体 */
+input{font-family:"微软雅黑";font-size:12px;}
+select{font-family:"微软雅黑";font-size:12px;}
+textarea{font-family:"微软雅黑";font-size:12px;}
+/* hr */
+.hrs{ margin: 5px 0;}
+/* 自动居中 */
+.center{ margin: 0 auto;}
+.textcenter{ text-align:center;}
+.foot{ padding:20px;}
+
+
+
+/* 表格样式 */
+table {
+	width:100%;
+	border-collapse:collapse;
+	border:0px solid #ccc;
+	margin-bottom:10px;
+}
+th, tr { font-weight: normal;}
+
+
+
+/* 按钮样式 */
+button {
+	font-family:"微软雅黑";
+	line-height:30px;
+	padding:0 20px;
+	height:30px;
+	cursor:pointer;
+}
+
+
+

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* 布局 */
+#admin_top{height:55px; margin: 0 auto; min-width:900px;}
+#admin_left{left:0; top:55px; bottom:0; width:180px; background:RGB(238,241,248); border-right:1px #CCCCCC solid;}
+#admin_right{background:#FFF; right:0; bottom:0; top:55px; left:181px;}
+
+
+/* 一级导航 */
+#admin_nav{}
+#admin_nav ul{height:55px;font-size:16px;}
+#admin_nav ul li{ width:60px;color:#FFF; text-align:center; float:left; list-style-type:none; height:55px; line-height:55px; cursor:pointer;}
+#admin_nav ul li:hover{border-bottom:4px #CCCCCC solid; height:50px;}
+#admin_info{width:230px; height:25px;color:#FFF; margin:10px; }
+#admin_info a{ color:#cccccc; text-decoration:none;}
+
+
+/* 皮肤选择器 */
+#admin_face{right:5px;top:20px; cursor: pointer; background: url(images/admin_face.gif); width: 15px; height: 15px;}
+#admin_face:hover{border: 1px blue solid;}
+
+
+/* 二级导航 */
+.menu_content{font-size:14px; color:#333; height:100%;}
+.menu_content ul li{ list-style-type:none; height:30px; line-height:30px; text-align:center;
+border-left:4px RGB(230,236,242) solid;}
+.menu_content ul li:hover{ background:RGB(230,236,242); cursor:pointer;border-left:4px #CCCCCC solid;}
+.menu_title{font-size:18px; margin: 5px auto; height:40px; line-height:40px; text-align: center; background:RGB(230,236,242)}
+.menu_line{border-bottom:1px #999 solid; margin: 5px 0;}
+
+/* 内容 */
+.admin_content{ height: 100%; overflow:auto;  }
+.content{margin:10px; font-size:12px; }

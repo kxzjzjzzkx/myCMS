@@ -1,0 +1,46 @@
+<!-- 华丽的分割线 -->
+<div id="messageBox" style="position:fixed !important;right:-250px; bottom:-15px; margin-bottom:0px; width:280px; height:250px;">
+ 	<div style="height:30px;background:gray;">
+ 		<div style="float:left; cursor:pointer; padding-top:2px;" onClick="showMessageBox();"><img src="http://localhost:8080/themes/blue/images/jiantou.gif" /></div>
+ 		<div style="float: left; line-height:30px;font-size:15px; color:white; padding-left:10px;font-weight:bold;">留言板</div>
+ 		<div id="exit" onclick="hideMessageBox();"></div>
+ 	</div>
+	<div style="padding: 10px; background: white; border:1px #CCC solid;">
+	<form action="${url}/plugin" method="post">
+		<input type="hidden" name="plugin" value="comment" />
+		<input type="hidden" name="method" value="action" />
+		<table>
+			<tr>
+				<td colspan="2" width="100"><textarea name="content" style="width:250px; height:100px; margin: 0px; padding:3px;"></textarea></td>
+			</tr>
+			<tr>
+				<th>昵称: </th><td><input name="nickname" value="[游客001]" style="width:200px;"/></td>
+			</tr>
+	 		<tr>
+				<th>验证: </th><td><input name="authcode" value="" style="width:60px;float:left;"/><img style="height:20px; float:left;" src="${url}/authcode.do"/></td>
+			</tr> 
+		 	<tr>
+		 		<td colspan="2" align="center">
+                <input style="height:25px; width:80px;" type="submit" value="提交" />
+                </td>
+		 	</tr>
+		</table>
+	</form>
+	</div>
+</div>
+<script type="text/javascript">
+var isShow = false;
+function hideMessageBox(){
+	if(isShow){
+		$("#messageBox").animate({right:"-250px"},300);
+		isShow = false;
+	}
+}
+function showMessageBox(){
+ 	if(!isShow){
+		$("#messageBox").animate({right:"0px"},300);
+		isShow = true;
+	}
+}
+</script>
+<!-- 华丽的分割线 -->

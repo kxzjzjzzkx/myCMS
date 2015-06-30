@@ -1,0 +1,26 @@
+<div class="content">
+	<h2>栏目管理</h2>
+	<hr class="hrs"/>
+	<button action="channel/add.do" onclick="refreshContentByElement(this);">添加栏目</button>
+	<div class="hrs"></div>
+	<table class="table_for_list">
+	    <tbody>
+	      <tr> 
+	        <th width="5" class="quanxuan" onclick="allCheck();"> </th>
+	        <th width="30">ID</th>
+	        <th align="left">页面名称</th>
+	        <th>URL地址</th>
+	        <th>内容模型</th>
+	        <th>排序</th> 
+	        <th>状态</th>
+	        <th width="80">操作</th>
+	      </tr>
+		  <#include "/common/child.html" /> 
+		  <@tree id = 0 node = -1/> 
+		</tbody>
+	</table>
+
+
+
+
+</div>

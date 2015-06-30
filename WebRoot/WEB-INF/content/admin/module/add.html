@@ -1,0 +1,40 @@
+<div class="content">
+	<h2>添加内容模型</h2>
+	<hr class="hrs"/>
+</div>
+<div class="content">
+	<form id="myForm" action="module/save.do" method="post">
+	<table class="table_for_add">
+		<tbody> 
+			<tr class="rowBgColor">
+				<th width="140">模型名称： </th>
+				<td><input class="input_for_add" name="name" type="text" placeholder="请填写碎片名称" /></td>
+				<td><span id="Validform_checktip"></span></td>
+			</tr>
+			<tr>
+				<th>模型标识： </th>
+				<td><input class="input_for_add" name="type" type="text" placeholder="请填写碎片标识符"/></td>
+				<td><span id="scope_status"></span></td>
+			</tr>
+			<tr class="rowBgColor">
+				<th>实现类URI：</th>
+				<td><input class="input_for_add" name="uri" type="text" placeholder="请填写实现类路径"/></td>
+				<td><span id="trade_status"></span></td>
+			</tr>
+			<tr>
+				<th>内容模板：</th>
+				<td><input class="input_for_add" name="template" type="text" placeholder="请填写内容模板路径"/></td>
+				<td><span id="type_status"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="hidden" id="hahacontent" name="content" value=""></input>
+	</form>
+	<div class="center textcenter foot">
+		<button onclick="submitActionForm(this);" return="module/list.do?currentPageNo=1">提交 </button>
+		<button onclick="resetActionForm();">重置 </button>
+	</div>
+</div>
+<script type="text/javascript">
+ 
+</script>

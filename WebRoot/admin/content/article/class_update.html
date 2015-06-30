@@ -1,0 +1,21 @@
+<form id="myForm" action="class/update" method="post">
+	<input name="class.id" type="hidden" value="${data.id}" />
+	<table class="table_add">
+		<tbody>
+			<tr>
+				<th width="30%">分类名称：</th>
+				<td><input name="class.name" type="text" value="${data.name}" /></td>
+				<td width="30"><span id="name_status"></span></td>
+			</tr>
+			<tr>
+				<th>描述信息：</th>
+				<td><textarea name="class.description" class="textarea">${data.description}</textarea></td>
+				<td><span id="address_status"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<div class="center textcenter">
+	<button onclick="submitActionForm(this);" return="class">提交 </button>
+	<button onclick="resetActionForm();">重置 </button>
+</div>

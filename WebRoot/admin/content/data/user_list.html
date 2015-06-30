@@ -1,0 +1,46 @@
+<div class="content">
+	<table class="table_list">
+	    <thead>
+	      <tr>
+	        <th colspan="10">用户管理
+	        <span class="fr white">[<a href="#" action="user/add" onclick="YLCMS.dialog(this,'添加用户',450,350);">添加</a>]</span>
+	        </th>
+	      </tr>
+	    </thead>
+	    
+	    <tbody>
+	      <tr> 
+	        <th width="30" id="quanxuan" class="quanxuan" onclick="allCheck();">全选</th>
+	        <th>用户名</th>
+	        <th>用户昵称</th>
+	        <th>用户组</th>
+	        <th>电子邮箱</th>
+	        <th>登录时间</th>
+	        <th>状态</th>
+	        <th>描述信息</th>
+	        <th width="30">操作</th>
+	      </tr>
+		  <#list userPage.getList() as x>
+			<tr onmouseout="refreshTableCSS(this,false);" onmouseover="refreshTableCSS(this,true);">
+		      	<td class="checkbox"><input type="checkbox" value="${x.id}" /></td>
+		        <td>${x.name}</b></td>
+		        <td>${x.nickname} </td> 
+		        <td>${x.groupname} </td>  
+		        <td>${x.email} </td>
+		        <td>${x.createtime?string("yyyy-MM-dd HH:mm:ss")}</td> 
+		        <td>
+			        <#if "0" == "${x.status}">禁用</#if>
+			        <#if "1" == "${x.status}">离线</#if>
+			        <#if "2" == "${x.status}">在线</#if>
+		        </td> 
+		         <td>${x.description} </td>  
+		        <td>
+		        <a href="#" action="user/edit/${x.id}" onclick="YLCMS.dialog(this,'修改用户: ${x.name}',450,320);">修改</a>
+		        <a href="#" style="display: none;" action="user/delete/${x.id}" return="user" onclick="deleteById(this);">删除</a></td>
+		    </tr>
+		  </#list>
+		</tbody>
+	</table>
+  <#include "/common/_page.html" />
+  <@paginate currentPage=userPage.pageNumber totalPage=userPage.totalPage actionUrl="user/" />
+</div>

@@ -1,0 +1,58 @@
+<div class="content">
+	<script type="text/javascript">
+	//配置编辑器路径
+	window.UEDITOR_HOME_URL = "/public/ueditor/";
+	</script>
+    <script type="text/javascript" charset="utf-8" src="/public/ueditor/editor_config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/public/ueditor/editor_all.js"></script>
+
+	<form id="myForm" action="article/save" method="post">
+		<table class="table_add">
+			<tbody>
+				<tr>
+					<th width="100">所属分类：</th>
+					<td>
+					<select name="class.id">
+					<#list fenlei as x>
+						<option value="${x.id}">${x.name}</option>
+					</#list>
+					</select>
+					</td>
+					<td width="30"><span id="name_status"></span></td>
+				</tr>
+				<tr>
+					<th>内容标题：</th>
+					<td><input name="aticle.title" type="text" /></td>
+					<td width="30"><span id="name_status"></span></td>
+				</tr>
+				<tr>
+					<th>文章内容：</th>
+					<td>
+					<textarea id="article_content" style="display: none;" name="article.content" type="hidden" value=""></textarea>
+					<script type="text/plain" id="YLCMSEditor"></script>
+					<script type="text/javascript">
+					var editor_a = new UE.ui.Editor();
+    				editor_a.render( 'YLCMSEditor' );
+					</script>
+					</td>
+					<td><span id="address_status"></span></td>
+				</tr>
+				<tr>
+					<th>描述信息：</th>
+					<td><textarea name="article.description" class="textarea"></textarea></td>
+					<td><span id="address_status"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<div class="center textcenter">
+		<button onclick="submit_content(this);" return="article">提交 </button>
+		<button onclick=" resetActionForm();">重置 </button>
+	</div>
+</div>
+<script type="text/javascript">
+function submit_content(obj){
+	$("#article_content").html(editor_a.getContent());
+	submitActionForm(obj);
+}
+</script>

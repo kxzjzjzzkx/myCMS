@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.cb{ clear:both;}
+
+
+
+
+
+
+
+
+.app-list li{padding:5px !important;}
+
+
+.app-content{border:1px #FFFFFF solid;}
+.app-content-header{background: #D3D8DC; font-weight:normal;}
+.app-content-h-c{margin-left:10px; margin-top:5px; float:left;}
+.app-content-h-c-name{font-size:14px}
+.app-content-h-c-time{font-size:10px;}
+
+.app-content-content{background:#FFF; color:#666; font-weight:normal; font-family:'黑体'; padding:8px;}
